@@ -7,7 +7,7 @@ const baseApiUrl = async () => {
   return base.data.api;
 };
 module.exports.config = {
-    name: "sing",
+    name: "song",
     version: "2.1.0",
     aliases: [ "music", "play"],
     credits: "dipto",
@@ -91,7 +91,7 @@ async function dipto(url,pathName) {
     const response = (await axios.get(url,{
       responseType: "arraybuffer"
     })).data;
-
+ 
     fs.writeFileSync(pathName, Buffer.from(response));
     return fs.createReadStream(pathName);
   }
